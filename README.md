@@ -8,4 +8,5 @@ Runs a Gradle task
 
 ## Optional Inputs
 
+- `AC_PROJECT_PATH`: Project Path. Specifies the project path.
 - `AC_GRADLE_TASK_EXTRA_PARAMETERS`: Task Parameters. Extra command line parameters for the task.
