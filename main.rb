@@ -20,12 +20,11 @@ ac_module = get_env_variable('AC_MODULE') || abort('Missing module.')
 ac_variants = get_env_variable('AC_VARIANTS') || abort('Missing variants.')
 ac_repo_path = get_env_variable('AC_REPOSITORY_DIR') || abort('Missing repo path.')
 ac_output_folder = get_env_variable('AC_OUTPUT_DIR') || abort('Missing output folder.')
-task_name = get_env_variable('AC_GRADLE_TASK') || abort('Missing gradle task.')
+gradle_task = get_env_variable('AC_GRADLE_TASK') || abort('Missing gradle task.')
 
 ac_gradle_params = get_env_variable('AC_GRADLE_TASK_EXTRA_PARAMETERS') || ''
 ac_project_path = get_env_variable('AC_PROJECT_PATH') || '.'
 
-gradle_task = "#{ac_module}:#{task_name}#{ac_variants.capitalize}"
 gradlew_folder_path = if Pathname.new(ac_project_path.to_s).absolute?
                         ac_project_path
                       else
