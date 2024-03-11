@@ -2,11 +2,27 @@
 
 Runs a Gradle task
 
-## Required Inputs
+## Required Input Variables
 
-- `AC_GRADLE_TASK`: Gradle task name. Specifies Gradle task name.
+- `AC_REPOSITORY_DIR`: Specifies the cloned repository path.
+- `AC_MODULE`: Specifies the project module for build.
+- `AC_VARIANTS`: Specifies build variants. For example : `-configuration DEBUG`.
+- `AC_GRADLE_OUTPUT_DIR`: Specifies the directory path for the generated app files.
+- `AC_GRADLE_TASK`: Specifies Gradle task name.
 
-## Optional Inputs
+## Optional Inputs Variables
 
-- `AC_PROJECT_PATH`: Project Path. Specifies the project path.
-- `AC_GRADLE_TASK_EXTRA_PARAMETERS`: Task Parameters. Extra command line parameters for the task.
+- `AC_PROJECT_PATH`: Specifies the project path.
+- `AC_GRADLE_TASK_EXTRA_PARAMETERS`: Extra command line parameters for the task.
+
+## Required Steps
+
+-  Git Clone
+
+## Preceding Steps
+
+-  Activate Ssh Key
+
+## Following Steps
+
+-  Export Build Artifacts
