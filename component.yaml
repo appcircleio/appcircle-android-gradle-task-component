@@ -16,13 +16,13 @@ inputs:
   defaultValue: "$AC_MODULE"
   isRequired: true
   title: Module
-  description: "Specifies the project module for build."
+  description: "Specifies the project module to be built."
   helpText:
 - key: "AC_VARIANTS"
   defaultValue: "$AC_VARIANTS"
   isRequired: true
   title: Variants
-  description: "Specifies build variants. For example : `-configuration DEBUG`."
+  description: "Specifies build variants. For example: `-configuration DEBUG`."
   helpText:
 - key: "AC_GRADLE_OUTPUT_DIR"
   defaultValue: "$AC_OUTPUT_DIR"
@@ -45,7 +45,7 @@ inputs:
 - key: "AC_GRADLE_TASK_EXTRA_PARAMETERS"
   isRequired: false
   title: Task Parameters
-  description: "Extra command line parameters for the task."
+  description: "Extra command-line parameters for the task."
   helpText:
 outputs:
 processFilename: ruby
