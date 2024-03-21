@@ -11,16 +11,20 @@ def get_env_variable(key)
   ENV[key].nil? || ENV[key] == '' ? nil : ENV[key]
 end
 
+def env_has_key(key)
+  return (ENV[key] != nil && ENV[key] !="") ? ENV[key] : abort("Missing #{key}.")
+end
+
 def run_command(command)
   puts "@@[command] #{command}"
   exit $CHILD_STATUS.exitstatus unless system(command)
 end
 
-ac_module = get_env_variable('AC_MODULE') || abort('Missing module.')
-ac_variants = get_env_variable('AC_VARIANTS') || abort('Missing variants.')
-ac_repo_path = get_env_variable('AC_REPOSITORY_DIR') || abort('Missing repo path.')
-ac_output_folder = get_env_variable('AC_OUTPUT_DIR') || abort('Missing output folder.')
-gradle_task = get_env_variable('AC_GRADLE_TASK') || abort('Missing gradle task.')
+ac_module = env_has_key('AC_MODULE')
+ac_variants = env_has_key('AC_VARIANTS')
+ac_repo_path = env_has_key('AC_REPOSITORY_DIR')
+ac_output_folder = env_has_key('AC_GRADLE_OUTPUT_DIR')
+gradle_task = env_has_key('AC_GRADLE_TASK')
 
 ac_gradle_params = get_env_variable('AC_GRADLE_TASK_EXTRA_PARAMETERS') || ''
 ac_project_path = get_env_variable('AC_PROJECT_PATH') || '.'
